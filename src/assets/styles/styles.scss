@@ -1,0 +1,76 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/helpers";
+@import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/utilities/api";
+@import "node_modules/bootstrap/scss/forms";
+
+@import "../../app/views/index.scss";
+@import "./frames.scss";
+@import "./borders.scss";
+
+@font-face {
+    font-family: "pixel";
+    src: url("../fonts/Volter.ttf") format("truetype");
+}
+@font-face {
+    font-family: "pixel-bold";
+    src: url("../fonts/Volter_Bold.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    font-family: pixel;
+    font-size: 9px;
+    -webkit-font-smoothing: none !important;
+    image-rendering: pixelated;
+
+    .nitro-classic {
+        background-color: #000;
+        height: 581px;
+        width: 1000px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    strong,
+    b {
+        font-family: pixel-bold;
+    }
+    .overflow-y-scroll {
+        overflow-y: scroll;
+        min-height: 28px;
+    }
+
+    * {
+        &::-webkit-scrollbar {
+            width: 15px;
+        }
+        &::-webkit-scrollbar-track {
+            background-image: url("../images/scroll/rail.png");
+        }
+        &::-webkit-scrollbar-thumb {
+            background-image: url("../images/scroll/thumb-top.png"),
+                url("../images/scroll/thumb-bottom.png"),
+                url("../images/scroll/thumb-middle.png");
+            background-repeat: no-repeat, no-repeat, repeat-y;
+            background-position: 0 0, bottom, 0 7px;
+        }
+        &::-webkit-scrollbar-button:vertical:start:decrement {
+            background-image: url("../images/scroll/buttons.png");
+            height: 14px;
+            display: block;
+        }
+
+        &::-webkit-scrollbar-button:vertical:end:increment {
+            background-image: url("../images/scroll/buttons.png");
+            background-position-y: 14px;
+            height: 14px;
+            display: block;
+        }
+    }
+}

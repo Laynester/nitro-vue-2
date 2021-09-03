@@ -1,0 +1,15 @@
+.classic-loader {
+    background-color: #1d394e;
+    background-image: url("../images/loader/preload.png"),
+        url("../images/loader/grid.png");
+    background-repeat: no-repeat, repeat;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    z-index: 99999;
+
+    .loading-text {
+        font-size: 27px;
+        font-family: pixel-bold;
+    }
+}

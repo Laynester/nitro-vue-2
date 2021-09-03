@@ -1,0 +1,62 @@
+.classic-frame {
+    z-index: 30;
+    min-width: 100px;
+    position: absolute;
+
+    &[skin="0"] {
+        border-image-slice: 13 fill;
+        border-image-width: 13px;
+        border-image-source: url("../images/frame/background.png");
+        border-image-repeat: repeat;
+        padding: 5px 5px 5px 4px;
+        box-shadow: 3px 3px rgba($black, 0.3);
+        border-radius: 18px;
+
+        .classic-frame-header {
+            background-image: url("../images/frame/header.png");
+            border-radius: 9px 9px 0 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 7px;
+            height: 15px;
+            position: relative;
+
+            span {
+                font-family: pixel-bold;
+                background-image: url("../images/frame/header-2.png");
+                margin: auto;
+                padding: 0 3px 0 5px;
+                color: #fff;
+                line-height: 20px;
+            }
+
+            .classic-frame-close {
+                height: 13px;
+                width: 13px;
+                background-image: url("../images/frame/close.png?2");
+                position: absolute;
+                top: 1px;
+                right: 6px;
+            }
+        }
+
+        .card-frame-content {
+            padding: 0 6px 6px 6px;
+        }
+    }
+}
+
+.classic-tabs {
+    &[size="lg"] {
+        border-image-slice: 6 fill;
+        border-image-width: 6px;
+        border-image-source: url("../images/frame/big-tab-2.png");
+        border-image-repeat: repeat;
+        height: 62px;
+        font-family: pixel-bold;
+        padding: 5px 13px;
+        &.active {
+            border-image-source: url("../images/frame/big-tab.png");
+        }
+    }
+}

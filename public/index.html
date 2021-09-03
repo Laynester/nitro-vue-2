@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  </head>
+  <body class="overflow-hidden">
+    <div id="classic"></div>
+    <script>
+      var NitroConfig = {
+        configurationUrls: [ '/renderer-config.json', '/ui-config.json' ],
+        sso: (new URLSearchParams(window.location.search).get('sso') || null)
+      };
+    </script>
+  </body>
+</html>

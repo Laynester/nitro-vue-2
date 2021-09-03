@@ -1,0 +1,11 @@
+{
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true,
+    },
+    "emmet.excludeLanguages": [
+        "typescript"
+    ],
+    "vetur.experimental.templateInterpolationService": false,
+}

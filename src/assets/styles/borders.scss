@@ -1,0 +1,50 @@
+.classic-border {
+    &[skin="0"] {
+    }
+
+    &[skin="1"] {
+        border-image-slice: 8 fill;
+        border-image-width: 8px;
+        border-image-source: url("../images/borders/border-2.png");
+        border-image-repeat: repeat;
+    }
+
+    &[skin="2"] {
+        border-image-slice: 8 fill;
+        border-image-width: 8px;
+        border-image-source: url("../images/borders/border-3.png");
+        border-image-repeat: repeat;
+    }
+
+    &[skin="3"] {
+        border-image-slice: 6 fill;
+        border-image-width: 6px;
+        border-image-source: url("../images/borders/border-4.png");
+        border-image-repeat: repeat;
+        padding: 4px 4px 3px 4px;
+        &.dark {
+            border-image-source: url("../images/borders/border-4-dark.png");
+        }
+        &.red {
+            border-image-source: url("../images/borders/border-4-red.png");
+        }
+        &.orange {
+            border-image-source: url("../images/borders/border-4-orange.png");
+        }
+        &.yellow {
+            border-image-source: url("../images/borders/border-4-yellow.png");
+        }
+        &.green {
+            border-image-source: url("../images/borders/border-4-green.png");
+        }
+    }
+}
+
+input,
+.classic-border[skin="4"] {
+    background: transparent;
+    border-image-slice: 6 fill;
+    border-image-width: 6px;
+    border-image-source: url("../images/borders/border-5.png");
+    border-image-repeat: repeat;
+}
