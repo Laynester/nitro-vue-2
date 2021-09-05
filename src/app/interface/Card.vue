@@ -100,7 +100,10 @@ export default {
         ref="draggableContainer"
     >
         <div class="lstr-classic-frame-header" @mousedown="dragMouseDown">
-            <span v-html="text" />
+            <span>
+                {{text}}
+                <slot name="title" />
+            </span>
             <div class="lstr-classic-frame-close" @click="$emit('clicked')" />
         </div>
         <div class="h-100 lstr-classic-frame-content d-flex flex-column overflow-hidden">

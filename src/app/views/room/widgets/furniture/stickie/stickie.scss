@@ -1,0 +1,114 @@
+.lstr-classic-stickie {
+    width: 185px;
+    height: 178px;
+    top: 25px;
+    left: 25px;
+    padding: 1px;
+
+    .lstr-classic-frame-header {
+        width: 183px;
+        height: 18px;
+        padding: 3px 7px;
+        display: flex;
+
+        span {
+            display: flex;
+
+            .header-trash,
+            .header-close {
+                cursor: pointer;
+            }
+
+            .lstr-classic-stickie-color {
+                width: 10px;
+                height: 10px;
+                cursor: pointer;
+                border: 1px solid #000;
+            }
+
+            > * {
+                margin-right: 5px;
+            }
+        }
+
+        .lstr-classic-frame-close {
+            background-image: url("../images/room-widgets/stickie-widget/stickie-spritesheet.png");
+            width: 10px;
+            height: 10px;
+            background-position: -2px -366px;
+            position: absolute;
+            right: 5px;
+        }
+    }
+
+    .lstr-classic-stickie-context {
+        width: 100%;
+        height: 145px;
+        padding: 2px 5px;
+        color: $black;
+
+        .context-text {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            overflow-wrap: break-word;
+            white-space: break-spaces;
+            overflow-y: auto;
+        }
+
+        textarea {
+            background: transparent;
+            border: 0;
+            outline: none;
+            box-shadow: none;
+            resize: none;
+            font-family: pixel-bold;
+            overflow: hidden;
+
+            &:active {
+                border: 0;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.lstr-classic-stickie-image {
+    background-image: url("../images/room-widgets/stickie-widget/stickie-spritesheet.png");
+    &.lstr-classic-stickie-blue,
+    &.lstr-classic-stickie-yellow,
+    &.lstr-classic-stickie-green,
+    &.lstr-classic-stickie-pink {
+        width: 185px;
+        height: 178px;
+    }
+
+    &.lstr-classic-stickie-blue {
+        background-position: -2px -2px;
+    }
+
+    &.lstr-classic-stickie-yellow {
+        background-position: -191px -184px;
+    }
+
+    &.lstr-classic-stickie-green {
+        background-position: -191px -2px;
+    }
+
+    &.lstr-classic-stickie-pink {
+        background-position: -2px -184px;
+    }
+
+    &.lstr-classic-stickie-close {
+        width: 10px;
+        height: 10px;
+        background-position: -2px -366px;
+    }
+
+    &.lstr-classic-stickie-trash {
+        width: 9px;
+        height: 10px;
+        background-position: -16px -366px;
+    }
+}

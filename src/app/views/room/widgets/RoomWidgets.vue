@@ -1,12 +1,13 @@
 <script lang="ts">
 import ChatHistory from "./chatHistory/ChatHistory.vue";
 import ChatInput from "./chatInput/ChatInput.vue";
+import Stickie from "./furniture/stickie/Stickie.vue";
 import RoomChat from "./roomChat/RoomChat.vue";
 import { RoomWidgetListener } from "./RoomWidgetListener";
 
 export default {
     props: ["roomSession"],
-    components: { RoomChat, ChatInput, ChatHistory },
+    components: { RoomChat, ChatInput, ChatHistory, Stickie },
     mounted() {
         RoomWidgetListener.getInstance();
         RoomWidgetListener.getInstance().setHandler(
@@ -20,4 +21,5 @@ export default {
     <RoomChat :roomSession="roomSession" />
     <ChatHistory :roomSession="roomSession" />
     <ChatInput />
+    <Stickie />
 </template>
