@@ -1,0 +1,17 @@
+{
+    "purse.spend": "Spend Credits",
+    "purse.title": "Habbo Purse",
+    "purse.secondary": "pixels",
+    "purse.you.have": "You have <b>%credits%</b> Credits",
+    "disconnected.title": "Hotel Error",
+    "disconnected.message": "You've been disconnected, reload the page or click the link below.",
+    "disconnected.reload": "Click here to reconnect",
+    "authenticate.new.1": "First time here?",
+    "authenticate.new.2": "Dont have a Habbo yet?",
+    "authenticate.new.3": "You can create one here",
+    "authenticate.login.1": "What's your Habbo called?",
+    "authenticate.login.2": "Name of your Habbo",
+    "authenticate.login.3": "Password",
+    "authenticate.generic.ok": "OK",
+    "room.loading": "Loading %room%... </br>please wait!"
+}

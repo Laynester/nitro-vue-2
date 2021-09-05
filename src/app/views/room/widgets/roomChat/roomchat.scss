@@ -3,6 +3,7 @@
     height: 40%;
     position: absolute;
     top: 0;
+    pointer-events: none;
 }
 
 @import "./ChatBubble/chatbubble.scss";

@@ -1,0 +1,44 @@
+.room-chat-history {
+    position: absolute;
+    top: -51px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    pointer-events: none;
+
+    .room-chat-history-inner {
+        background-image: url("../../assets/images/chat/history_bg.png");
+        padding: 10px;
+        height: 0;
+        display: none;
+        flex-direction: column;
+        .bubble-container {
+            position: relative;
+            top: unset !important;
+        }
+    }
+
+    .room-chat-history-handle {
+        height: 31px;
+        width: 100%;
+        background-image: url("../../assets/images/chat/handle_1.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        pointer-events: all;
+
+        .room-chat-history-handle-inner {
+            width: 98px;
+            height: 21px;
+            background-image: url("../../assets/images/chat/handle_2.png");
+        }
+    }
+
+    &.chat-history-visible {
+        top: 0;
+    }
+}

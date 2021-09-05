@@ -7,11 +7,20 @@ export default createStore({
             isError: false,
             percent: 0,
             hotelview: true,
+            lastZ: null,
+            login: false,
+            texts: null,
+            config: null
+        },
+        user: {
+            credits: 0,
+            currencies: new Map<number, number>()
         },
         uiVisible: {
             navigator: true,
             catalogue: false,
-            looks: false
+            looks: false,
+            purse: false
         },
         navigator: {
             topLevelContexts: null,
@@ -34,8 +43,10 @@ export default createStore({
         },
         room: {
             widgetHandler: null,
-            roomChat: null,
-            roomChatHistory: null
+            history: false,
+            historyDragged: false,
+            chat: [],
+            info: null
         }
     }
 });

@@ -15,7 +15,7 @@ export default {
         NavigatorCategoryItem,
         NavigatorTabs,
         NavigatorSubMenu,
-        NavigatorSelectedCategory,
+        NavigatorSelectedCategory
     },
     mounted() {
         if (!this.$store.state.navigator.isLoaded)
@@ -26,8 +26,8 @@ export default {
     methods: {
         resultCode(res) {
             return ResultCode(res);
-        },
-    },
+        }
+    }
 };
 </script>
 
@@ -35,8 +35,8 @@ export default {
     <Card
         skin="0"
         :text="$filters.localizeText('navigator.title')"
-        center="false"
-        class="classic-navigator"
+        :center="false"
+        class="lstr-classic-navigator"
         v-if="$store.state.navigator.topLevelContext && $store.state.uiVisible.navigator"
         @clicked="$store.state.uiVisible.navigator = false;"
     >
@@ -44,15 +44,15 @@ export default {
         <NavigatorSubMenu />
         <Border
             skin="1"
-            class="h-100 classic-navigator-body d-flex flex-column overflow-hidden"
+            class="h-100 lstr-classic-navigator-body d-flex flex-column overflow-hidden"
             v-if="$store.state.navigator.lastSearchResults.length && !$store.state.navigator.selectedCategory"
             :class="{'hasSubmenu': ($store.state.navigator.selectedTab || $store.state.app.hotelview && $store.state.navigator.topLevelContext.code !== 'official_view')}"
         >
             <NavigatorContent />
         </Border>
         <NavigatorSelectedCategory />
-        <Border skin="2" class="classic-navigator-info">
-            <div class="classic-navigator-info-content"></div>
+        <Border skin="2" class="lstr-classic-navigator-info">
+            <div class="lstr-classic-navigator-info-content"></div>
         </Border>
     </Card>
 </template>

@@ -1,6 +1,6 @@
 $iconUrl: "../../assets/images/icons/toolbar/";
-.classic-toolbar {
-    width: 100%;
+
+.lstr-classic-toolbar {
     height: 54px;
     background: #4b4b4b;
     border-top: 1px solid #000;
@@ -23,43 +23,64 @@ $iconUrl: "../../assets/images/icons/toolbar/";
         height: 41px;
         background-repeat: no-repeat;
         background-position: center;
+        flex-shrink: 0;
+        cursor: pointer;
 
         &.hc {
-            background-image: url($iconUrl + "hc.png");
+            background-image: url($iconUrl+"hc.png");
         }
 
         &.console {
-            background-image: url($iconUrl + "console_1.png");
+            background-image: url($iconUrl+"console_1.png");
             &.unread-messages {
-                background-image: url($iconUrl + "console_2.png");
+                background-image: url($iconUrl+"console_2.png");
             }
         }
 
         &.friends {
-            background-image: url($iconUrl + "friends_1.png");
+            background-image: url($iconUrl+"friends_1.png");
             &.unread-friends {
-                background-image: url($iconUrl + "friends_2.png");
+                background-image: url($iconUrl+"friends_2.png");
             }
         }
 
         &.navigator {
-            background-image: url($iconUrl + "navigator.png");
+            background-image: url($iconUrl+"navigator.png");
         }
 
         &.events {
-            background-image: url($iconUrl + "events.png");
+            background-image: url($iconUrl+"events.png");
         }
 
         &.catalogue {
-            background-image: url($iconUrl + "catalogue.png");
+            background-image: url($iconUrl+"catalogue.png");
         }
 
         &.joystick {
-            background-image: url($iconUrl + "joystick.png");
+            background-image: url($iconUrl+"joystick.png");
         }
 
         &.help {
-            background-image: url($iconUrl + "help.png");
+            background-image: url($iconUrl+"help.png");
         }
+
+        &.sound {
+            height: 14px;
+            width: 15px;
+            background-image: url($iconUrl+"sound_1.png");
+
+            &.toggled {
+                background-image: url($iconUrl+"sound_2.png");
+            }
+        }
+
+        &.purse {
+            background-image: url($iconUrl+"purse.png");
+        }
+    }
+
+    .toolbar-icon-end {
+        width: auto;
+        height: 41px;
     }
 }

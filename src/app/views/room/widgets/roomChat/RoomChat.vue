@@ -12,6 +12,7 @@ export default {
     data() {
         return {
             interval: null,
+            chatInt: null,
             chatMessages: []
         };
     },
@@ -21,12 +22,15 @@ export default {
             this.onRoomWidgetUpdateChatEvent.bind(this)
         );
 
-        this.interval = setInterval(() => this.moveAllChatsUp(15), 4500);
+        this.interval = setInterval(() => this.moveAllChatsUp(15), 6000);
 
         Nitro.instance.roomEngine.events.addEventListener(
             RoomDragEvent.ROOM_DRAG,
             this.onDrag.bind(this)
         );
+        store.state.room.chat = [];
+        store.state.room.history = false;
+        store.state.room.historyDragged = false;
     },
     beforeUnmount() {
         clearInterval(this.interval);
@@ -87,7 +91,24 @@ export default {
             }
         },
         onRoomWidgetUpdateChatEvent(event: RoomWidgetUpdateChatEvent) {
-            const chatMessage = new ChatBubbleMessage(
+            this.chatMessages.push(this.newChatMessage(event));
+
+            if (this.chatInt) clearInterval(this.chatInt);
+
+            if (!store.state.room.historyDragged) {
+                store.state.room.history = false;
+
+                this.chatInt = setTimeout(() => {
+                    store.state.room.history = true;
+                }, parseInt(Nitro.instance.getConfiguration("chat.history.delay.seconds")) * 1000);
+            }
+
+            store.state.room.chat.push(
+                Object.assign(this.newChatMessage(event))
+            );
+        },
+        newChatMessage(event: RoomWidgetUpdateChatEvent) {
+            return new ChatBubbleMessage(
                 event.userId,
                 event.userCategory,
                 event.roomId,
@@ -101,15 +122,23 @@ export default {
                     ("#" + event.userColor.toString(16).padStart(6, "0") ||
                         null)
             );
-
-            this.chatMessages.push(chatMessage);
         }
     }
 };
 </script>
 
 <template>
-    <div class="room-chat" ref="roomchat">
-        <ChatBubble v-for="(r,i) in chatMessages" :key="i" :chat="r" @makeroom="makeRoom" />
+    <div
+        class="room-chat"
+        ref="roomchat"
+        :style="$store.state.room.historyDragged ? `visibility:hidden;` : ``"
+    >
+        <ChatBubble
+            v-for="(r,i) in chatMessages"
+            :key="i"
+            :chat="r"
+            :fixed="false"
+            @makeroom="makeRoom"
+        />
     </div>
 </template>

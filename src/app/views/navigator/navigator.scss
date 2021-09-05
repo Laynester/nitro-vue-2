@@ -1,12 +1,12 @@
 $iconUrl: "../../assets/images/navigator/";
 
-.classic-navigator {
+.lstr-classic-navigator {
     right: 12px;
     top: 37px;
     width: 363px;
     height: 453px;
 
-    .classic-tabs {
+    .lstr-classic-tabs {
         margin-top: 2px;
         display: flex;
 
@@ -18,7 +18,7 @@ $iconUrl: "../../assets/images/navigator/";
         }
 
         .tab-icon {
-            background-image: url($iconUrl + "tabs.png");
+            background-image: url($iconUrl+"tabs.png");
             margin-right: 5px;
 
             &.public {
@@ -49,25 +49,25 @@ $iconUrl: "../../assets/images/navigator/";
         }
     }
 
-    .classic-navigator-body {
+    .lstr-classic-navigator-body {
         margin-top: -7px;
         z-index: 2;
         padding: 9px 5px;
     }
 
-    .classic-navigator-info {
+    .lstr-classic-navigator-info {
         margin-top: -12px;
-        .classic-navigator-info-content {
+        .lstr-classic-navigator-info-content {
             height: 96px;
         }
     }
 
-    .classic-navigator-category-title {
+    .lstr-classic-navigator-category-title {
         margin-left: 17px;
     }
 
-    .classic-navigator-single-category,
-    .classic-navigator-category {
+    .lstr-classic-navigator-single-category,
+    .lstr-classic-navigator-category {
         padding-right: 4px;
         > div {
             &:not(:last-child) {
@@ -76,21 +76,21 @@ $iconUrl: "../../assets/images/navigator/";
         }
     }
 
-    .classic-navigator-single-category {
+    .lstr-classic-navigator-single-category {
         min-height: 64px;
         max-height: 64px;
         margin-top: 2px;
         margin-bottom: 7px;
     }
 
-    .classic-navigator-go {
+    .lstr-classic-navigator-go {
         width: 58px;
         margin-left: 2px;
         text-align: right;
     }
 
-    .classic-navigator-arrow-right {
-        background-image: url($iconUrl + "arrow-right.png");
+    .lstr-classic-navigator-arrow-right {
+        background-image: url($iconUrl+"arrow-right.png");
         width: 7px;
         height: 8px;
         align-self: center;
@@ -103,8 +103,8 @@ $iconUrl: "../../assets/images/navigator/";
         }
     }
 
-    .classic-navigator-arrow-left {
-        background-image: url($iconUrl + "arrow-left.png");
+    .lstr-classic-navigator-arrow-left {
+        background-image: url($iconUrl+"arrow-left.png");
         width: 7px;
         height: 8px;
         align-self: center;
@@ -116,11 +116,11 @@ $iconUrl: "../../assets/images/navigator/";
         margin-right: 4px;
     }
 
-    .classic-navigator-sub {
+    .lstr-classic-navigator-sub {
         margin-top: -7px;
         margin-bottom: -7px;
         padding-bottom: 7px;
-        .classic-navigator-sub-text {
+        .lstr-classic-navigator-sub-text {
             padding: 6px;
             padding-left: 22px;
             font-family: pixel-bold;
@@ -129,7 +129,7 @@ $iconUrl: "../../assets/images/navigator/";
         }
     }
 
-    .classic-navigator-sub-menu-tabs {
+    .lstr-classic-navigator-sub-menu-tabs {
         z-index: 9;
         margin-top: -7px;
         margin-bottom: -10px;
@@ -138,10 +138,10 @@ $iconUrl: "../../assets/images/navigator/";
             margin-bottom: -12px;
         }
 
-        .classic-navigator-sub-menu-tab {
+        .lstr-classic-navigator-sub-menu-tab {
             border-image-slice: 8 fill;
             border-image-width: 8px;
-            border-image-source: url($iconUrl + "tab.png");
+            border-image-source: url($iconUrl+"tab.png");
             border-image-repeat: repeat;
             padding: 6px 5px;
 
@@ -151,14 +151,14 @@ $iconUrl: "../../assets/images/navigator/";
                 margin-left: -1px;
             }
             &.active {
-                border-image-source: url($iconUrl + "tab-active.png");
+                border-image-source: url($iconUrl+"tab-active.png");
                 &.hasMenu {
-                    border-image-source: url($iconUrl + "tab-active-2.png");
+                    border-image-source: url($iconUrl+"tab-active-2.png");
                 }
             }
 
             .tab-icon {
-                background-image: url($iconUrl + "icons.png");
+                background-image: url($iconUrl+"icons.png");
                 margin-right: 5px;
 
                 &.search {
@@ -187,7 +187,7 @@ $iconUrl: "../../assets/images/navigator/";
         }
     }
 
-    .classic-navigator-sub-padding {
+    .lstr-classic-navigator-sub-padding {
         padding-top: 12px;
     }
 
@@ -198,7 +198,7 @@ $iconUrl: "../../assets/images/navigator/";
         }
     }
 
-    .classic-navigator-sub-menu {
+    .lstr-classic-navigator-sub-menu {
         z-index: 8;
         padding: 0 7px 6px 7px;
         padding-top: 16px;
@@ -210,7 +210,7 @@ $iconUrl: "../../assets/images/navigator/";
         &.rom {
             width: 19px;
             height: 36px;
-            background-image: url($iconUrl + "rom.png");
+            background-image: url($iconUrl+"rom.png");
         }
     }
 }

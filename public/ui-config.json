@@ -9,5 +9,27 @@
             "right": "${asset.url}/images/reception/US_right.png",
             "right.repeat": "${asset.url}/images/reception/US_top_right.png"
         }
-    }
+    },
+    "purse": {
+        "coin.worth": 1
+    },
+    "authenticate": {
+        "looks": [],
+        "motto": "",
+        "api.login": "http://127.0.0.1/sso.php"
+    },
+    "interstitials": {
+        "enabled": true,
+        "delay.seconds": 1.5,
+        "image.visibility": 2,
+        "image.dir": "https://habborator.org/archive/interstitials/",
+        "images":[
+            {"image":"us_inked.gif","url":"https://google.com"},
+            {"image":"roomloadtrophies.gif","url":"https://google.com"},
+            {"image":"diner.gif","url":"https://google.com"}
+        ]
+    },
+    "homeroom.delay.seconds": 5,
+    "chat.history.delay.seconds": 15 
+
 }

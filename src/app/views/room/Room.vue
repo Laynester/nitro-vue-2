@@ -3,14 +3,14 @@ import {
     Nitro,
     RoomEngineEvent,
     RoomId,
-    RoomSessionEvent,
+    RoomSessionEvent
 } from "@nitrots/nitro-renderer";
 import RoomView from "./RoomView.vue";
 export default {
     components: { RoomView },
     data() {
         return {
-            roomSession: null,
+            roomSession: null
         };
     },
     mounted() {
@@ -46,8 +46,9 @@ export default {
         onRoomEngineEvent(event: RoomEngineEvent) {
             if (RoomId.isRoomPreviewerId(event.roomId)) return;
 
-            const session =
-                Nitro.instance.roomEngine.roomSessionManager.getSession(-1);
+            const session = Nitro.instance.roomEngine.roomSessionManager.getSession(
+                -1
+            );
 
             if (!session) return;
 
@@ -72,13 +73,13 @@ export default {
                     this.roomSession = null;
                     return;
             }
-        },
-    },
+        }
+    }
 };
 </script>
 
 <template>
-    <div class="classic-room w-100 h-100 overflow-hidden">
+    <div class="lstr-classic-room w-100 h-100 overflow-hidden">
         <RoomView :roomSession="roomSession" v-if="roomSession" />
     </div>
 </template>

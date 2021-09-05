@@ -1,4 +1,4 @@
-.classic-frame {
+.lstr-classic-frame {
     z-index: 30;
     min-width: 100px;
     position: absolute;
@@ -11,13 +11,19 @@
         padding: 5px 5px 5px 4px;
         box-shadow: 3px 3px rgba($black, 0.3);
         border-radius: 18px;
-
-        .classic-frame-header {
+        .lstr-classic-frame-sub-title {
+            font-family: pixel-bold;
+            color: #fff;
+            margin-bottom: 5px;
+            display: block;
+            text-align: center;
+        }
+        .lstr-classic-frame-header {
             background-image: url("../images/frame/header.png");
             border-radius: 9px 9px 0 0;
             display: flex;
             justify-content: center;
-            margin-bottom: 7px;
+            margin-bottom: 1px;
             height: 15px;
             position: relative;
 
@@ -30,7 +36,7 @@
                 line-height: 20px;
             }
 
-            .classic-frame-close {
+            .lstr-classic-frame-close {
                 height: 13px;
                 width: 13px;
                 background-image: url("../images/frame/close.png?2");
@@ -40,13 +46,23 @@
             }
         }
 
-        .card-frame-content {
-            padding: 0 6px 6px 6px;
+        .lstr-classic-frame-content {
+            padding: 6px;
+
+            .lstr-classic-frame-body {
+                padding: 4px;
+                border-image-slice: 6 fill;
+                border-image-width: 6px;
+                border-image-source: url("../images/frame/body.png");
+                border-image-repeat: repeat;
+                margin-bottom: -1px;
+                margin-right: -1px;
+            }
         }
     }
 }
 
-.classic-tabs {
+.lstr-classic-tabs {
     &[size="lg"] {
         border-image-slice: 6 fill;
         border-image-width: 6px;
@@ -59,4 +75,8 @@
             border-image-source: url("../images/frame/big-tab.png");
         }
     }
+}
+
+.lstr-classic-frame-close {
+    cursor: pointer;
 }

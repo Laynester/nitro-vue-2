@@ -5,6 +5,7 @@
   "dependencies": {
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-typescript": "^4.5.13",
+    "axios": "^0.21.3",
     "bootstrap": "^5.1.0"
   },
   "devDependencies": {

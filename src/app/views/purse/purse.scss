@@ -1,0 +1,173 @@
+$imageUrl: "../../assets/images/purse/";
+
+.lstr-classic-purse {
+    width: 332px;
+    height: 251px;
+    background-image: url($imageUrl+"base.png");
+    position: absolute;
+    padding-top: 25px;
+
+    .lstr-classic-frame-header {
+        text-align: center;
+        font-family: pixel-bold;
+        color: #663300;
+        width: 260px;
+        margin: auto;
+        left: 1px;
+        position: relative;
+
+        .lstr-classic-frame-close {
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            top: 1px;
+            right: 11px;
+        }
+    }
+
+    .lstr-classic-purse-content {
+        width: 263px;
+        margin: auto;
+        color: #000;
+
+        .lstr-classic-purse-have {
+            font-family: pixel-bold;
+            text-align: center;
+
+            > b {
+                font-size: 18px;
+                margin: 0 5px;
+            }
+        }
+    }
+
+    .lstr-classic-purse-inner {
+        width: 263px;
+        height: 115px;
+        background-image: url($imageUrl+"inner.png");
+        margin-bottom: 5px;
+        margin-top: 3px;
+        padding-top: 3px;
+        text-align: center;
+        text-decoration: underline;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &.lstr-classic-purse-overflow {
+            background-position: 0 115px;
+        }
+
+        .lstr-classic-purse-grid {
+            height: 85px;
+            width: 263px;
+            margin-top: auto;
+            display: inline-flex;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            padding: 0 5px 5px 5px;
+            width: min-content;
+
+            .lstr-classic-purse-coin {
+                height: 15px;
+                width: 23px;
+                background-image: url($imageUrl+"coin.png");
+                margin-top: -8px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .lstr-classic-purse-secondary {
+        color: #ffd365;
+    }
+
+    .lstr-classic-purse-fly {
+        &[fly="1"] {
+            width: 11px;
+            height: 20px;
+            background-image: url($imageUrl+"fly_1.gif");
+            transition: left 4s linear, bottom 4s linear;
+            position: absolute;
+
+            &[frame="1"] {
+                left: 263px - 11px - 5px;
+                bottom: 18px;
+            }
+            &[frame="2"] {
+                left: 5px;
+                bottom: 24px;
+                background-image: url($imageUrl+"fly_2.gif");
+            }
+
+            &[frame="3"] {
+                left: 263px - 11px - 5px;
+                bottom: 5px;
+            }
+
+            &[frame="4"] {
+                left: 5px;
+                bottom: 30px;
+                background-image: url($imageUrl+"fly_2.gif");
+            }
+        }
+
+        &[fly="2"] {
+            width: 11px;
+            height: 20px;
+            background-image: url($imageUrl+"fly_2.gif");
+            transition: right 4s linear, top 4s linear;
+            position: absolute;
+
+            &[frame="1"] {
+                right: 263px - 11px - 5px;
+                top: 20px;
+            }
+            &[frame="2"] {
+                right: 5px;
+                top: 25px;
+                background-image: url($imageUrl+"fly_1.gif");
+            }
+
+            &[frame="3"] {
+                right: 263px - 11px - 5px;
+                top: 38px;
+            }
+
+            &[frame="4"] {
+                right: 5px;
+                top: 50px;
+                background-image: url($imageUrl+"fly_1.gif");
+            }
+        }
+
+        &[fly="3"] {
+            width: 15px;
+            height: 11px;
+            background-image: url($imageUrl+"fly_3.gif");
+            transition: top 2s linear, left 4s linear;
+            position: absolute;
+            left: 25%;
+
+            &[frame="1"] {
+                top: 97px;
+                left: 50%;
+            }
+            &[frame="2"] {
+                top: 20px;
+                left: 35%;
+                background-image: url($imageUrl+"fly_4.gif");
+            }
+
+            &[frame="3"] {
+                top: 97px;
+                left: 75%;
+            }
+
+            &[frame="4"] {
+                top: 20px;
+                background-image: url($imageUrl+"fly_4.gif");
+            }
+        }
+    }
+}

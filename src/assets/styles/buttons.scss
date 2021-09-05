@@ -1,0 +1,17 @@
+.lstr-classic-button {
+    font-family: pixel-bold;
+    text-align: center;
+    border-image-repeat: repeat;
+
+    &[skin="1"] {
+    }
+
+    &[skin="2"] {
+        border-image-slice: 6 fill;
+        border-image-width: 6px;
+        border-image-source: url("../images/buttons/button-2.png");
+        border-image-outset: 4px;
+        padding: 1px 6px 0 6px;
+        margin: 4px 0;
+    }
+}

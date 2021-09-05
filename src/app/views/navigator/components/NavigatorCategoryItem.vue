@@ -19,27 +19,27 @@ export default {
             }
 
             return colour;
-        },
+        }
     },
     methods: {
         openRoom() {
             NavigatorListener.getInstance().goToRoom(this.room.roomId);
-        },
-    },
+        }
+    }
 };
 </script>
 
 <template>
     <div class="d-flex flex-row" v-if="room">
-        <Border skin="3" class="w-100">{{room.roomName}}</Border>
+        <Border skin="3" class="w-100 cursor-pointer">{{room.roomName}}</Border>
         <Border
             skin="3"
-            class="classic-navigator-go text-right d-flex flex-row justify-content-end"
+            class="lstr-classic-navigator-go text-right d-flex flex-row justify-content-end cursor-pointer"
             :class="roomColour"
             @click="openRoom()"
         >
             {{$filters.localizeText('navigator.room.popup.go')}}
-            <div class="classic-navigator-arrow-right" />
+            <div class="lstr-classic-navigator-arrow-right" />
         </Border>
     </div>
 </template>

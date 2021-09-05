@@ -1,0 +1,25 @@
+.lstr-classic-disconnected {
+    background: rgba($black, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999999999;
+
+    .lstr-classic-disconnected-box {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        border: 1px solid #000;
+        background: rgba($white, 0.7);
+        width: 230px;
+        height: 100px;
+        padding: 8px;
+
+        .mt-auto {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

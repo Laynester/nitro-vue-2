@@ -12,6 +12,7 @@
 @import "../../app/views/index.scss";
 @import "./frames.scss";
 @import "./borders.scss";
+@import "./buttons.scss";
 
 @font-face {
     font-family: "pixel";
@@ -28,11 +29,16 @@ body {
     font-size: 9px;
     -webkit-font-smoothing: none !important;
     image-rendering: pixelated;
+    height: 581px;
+    width: 1000px;
+    background-color: #333;
+    color: #000;
 
-    .nitro-classic {
+    .nitro-classic,
+    #classic {
         background-color: #000;
-        height: 581px;
-        width: 1000px;
+        height: 100%;
+        width: 100%;
         position: relative;
         overflow: hidden;
     }
@@ -43,15 +49,19 @@ body {
     }
     .overflow-y-scroll {
         overflow-y: scroll;
+        overflow-x: hidden;
         min-height: 28px;
     }
 
     * {
+        outline: 0 !important;
         &::-webkit-scrollbar {
             width: 15px;
+            pointer-events: all;
         }
         &::-webkit-scrollbar-track {
             background-image: url("../images/scroll/rail.png");
+            pointer-events: all;
         }
         &::-webkit-scrollbar-thumb {
             background-image: url("../images/scroll/thumb-top.png"),
@@ -59,11 +69,13 @@ body {
                 url("../images/scroll/thumb-middle.png");
             background-repeat: no-repeat, no-repeat, repeat-y;
             background-position: 0 0, bottom, 0 7px;
+            pointer-events: all;
         }
         &::-webkit-scrollbar-button:vertical:start:decrement {
             background-image: url("../images/scroll/buttons.png");
             height: 14px;
             display: block;
+            pointer-events: all;
         }
 
         &::-webkit-scrollbar-button:vertical:end:increment {
@@ -71,6 +83,11 @@ body {
             background-position-y: 14px;
             height: 14px;
             display: block;
+            pointer-events: all;
         }
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
     }
 }

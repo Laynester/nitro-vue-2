@@ -5,9 +5,10 @@ import Toolbar from "../toolbar/Toolbar.vue";
 import Room from "../room/Room.vue";
 import Navigator from "../navigator/Navigator.vue";
 import { NavigatorListener } from "../navigator/NavigatorListener";
+import Purse from "../purse/Purse.vue";
 
 export default {
-    components: { Hotelview, Toolbar, Room, Navigator },
+    components: { Hotelview, Toolbar, Room, Navigator, Purse },
     mounted() {
         Nitro.instance.roomSessionManager.events.addEventListener(
             RoomSessionEvent.CREATED,
@@ -33,16 +34,17 @@ export default {
                     this.$store.state.app.hotelview = true;
                     return;
             }
-        },
-    },
+        }
+    }
 };
 </script>
 
 <template>
-    <div class="classic-main d-flex h-100 justify-content-between flex-column">
+    <div class="lstr-classic-main d-flex h-100 justify-content-between flex-column">
         <Hotelview v-if="$store.state.app.hotelview" />
         <Room />
         <Navigator />
+        <Purse />
         <Toolbar :hotelview="$store.state.app.hotelview" />
     </div>
 </template>

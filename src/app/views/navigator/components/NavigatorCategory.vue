@@ -7,7 +7,7 @@ export default {
     methods: {
         selectCategory() {
             this.$store.state.navigator.selectedCategory = this.result;
-        },
+        }
     },
     computed: {
         resultCode() {
@@ -20,7 +20,7 @@ export default {
 
             let max = 0;
 
-            obj.forEach((e) => {
+            obj.forEach(e => {
                 users += e.userCount;
                 max += e.maxUserCount;
             });
@@ -40,8 +40,8 @@ export default {
             }
 
             return colour;
-        },
-    },
+        }
+    }
 };
 </script>
 
@@ -52,19 +52,19 @@ export default {
         </template>
         <Border skin="3" class="d-flex dark" v-else @click="selectCategory()" :class="colour">
             <div class="w-100">{{$filters.localizeText(resultCode)}}</div>
-            <div class="classic-navigator-arrow-right wide" />
+            <div class="lstr-classic-navigator-arrow-right wide" />
         </Border>
     </div>
     <div v-else-if="tab == 'hotel_view' || tab == 'myworld_view'" class="d-flex-flex-column">
         <template v-if="index == '0'">
-            <b class="classic-navigator-category-title">{{$filters.localizeText(resultCode)}}</b>
-            <div class="overflow-y-scroll classic-navigator-single-category">
+            <b class="lstr-classic-navigator-category-title">{{$filters.localizeText(resultCode)}}</b>
+            <div class="overflow-y-scroll lstr-classic-navigator-single-category">
                 <NavigatorCategoryItem v-for="(r,i) in result.rooms" :key="i" :room="r" />
             </div>
         </template>
         <Border skin="3" class="d-flex dark" v-else @click="selectCategory()" :class="colour">
             <div class="w-100">{{$filters.localizeText(resultCode)}}</div>
-            <div class="classic-navigator-arrow-right wide" />
+            <div class="lstr-classic-navigator-arrow-right wide" />
         </Border>
     </div>
     <div v-else class="d-flex flex-column">

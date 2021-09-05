@@ -7,15 +7,15 @@ export default {
             NavigatorListener.getInstance().clearSearch();
             this.$store.state.navigator.selectedCategory = null;
             this.$store.state.navigator.selectedTab = null;
-        },
-    },
+        }
+    }
 };
 </script>
 
 <template>
     <div class="d-flex">
         <div
-            class="classic-tabs w-100"
+            class="lstr-classic-tabs w-100"
             size="lg"
             :class="{'active':$store.state.navigator.topLevelContext.code == 'official_view'}"
             @click="selectTab('official_view')"
@@ -24,7 +24,7 @@ export default {
             <span>{{$filters.localizeText('navigator.searchcode.title.official-root')}}</span>
         </div>
         <div
-            class="classic-tabs w-100"
+            class="lstr-classic-tabs w-100"
             size="lg"
             :class="{'active':$store.state.navigator.topLevelContext.code == 'hotel_view'}"
             @click="selectTab('hotel_view')"

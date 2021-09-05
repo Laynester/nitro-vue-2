@@ -1,11 +1,11 @@
 <script lang="ts">
 export default {
-    props: ["skin"],
+    props: ["skin"]
 };
 </script>
 
 <template>
-    <div class="classic-border" :skin="skin">
+    <div class="lstr-classic-border" :skin="skin">
         <slot />
     </div>
 </template>

@@ -142,6 +142,10 @@ export class NavigatorListener
 
         if (!parser) return;
 
+        store.state.room.info = event.getParser();
+
+        event.getParser()
+
         if (parser.roomEnter)
         {
             store.state.navigator.data.enteredGuestRoom = parser.data;

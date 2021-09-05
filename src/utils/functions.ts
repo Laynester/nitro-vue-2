@@ -1,4 +1,5 @@
 import { IConfigurationManager, MouseEventType, Nitro } from "@nitrots/nitro-renderer";
+import store from "./store";
 
 const ConfigManager = (): IConfigurationManager =>
 {
@@ -82,6 +83,7 @@ const ResultCode = (res): string =>
 
 const localizeText = (val: string, parameters: string[] = null, replacements: string[] = null) =>
 {
+    if (!Nitro.instance) return store.state.app.texts[val];
     return Nitro.instance.localization.getValueWithParameters(val, parameters, replacements);
 }
 

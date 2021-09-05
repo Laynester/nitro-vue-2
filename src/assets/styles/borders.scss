@@ -1,4 +1,4 @@
-.classic-border {
+.lstr-classic-border {
     &[skin="0"] {
     }
 
@@ -37,14 +37,28 @@
         &.green {
             border-image-source: url("../images/borders/border-4-green.png");
         }
+        &.brown {
+            border-image-source: url("../images/borders/border-4-brown.png");
+        }
     }
 }
 
 input,
-.classic-border[skin="4"] {
+.lstr-classic-border[skin="4"] {
     background: transparent;
+    padding: 2px 4px;
     border-image-slice: 6 fill;
     border-image-width: 6px;
     border-image-source: url("../images/borders/border-5.png");
     border-image-repeat: repeat;
+    &:active {
+        box-shadow: none;
+    }
+
+    &.scale-2 {
+        border-image-slice: 12 fill;
+        border-image-width: 12px;
+        font-size: 18px;
+        border-image-source: url("../images/borders/border-5-scaled.png");
+    }
 }

@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 import { Nitro, DesktopViewComposer } from "@nitrots/nitro-renderer";
 import { NavigatorListener } from "../NavigatorListener";
 
 export default {
     data() {
         return {
-            search: null,
+            search: null
         };
     },
     mounted() {
@@ -33,24 +33,24 @@ export default {
                 "myworld_view"
             );
             NavigatorListener.getInstance().clearSearch();
-        },
+        }
     },
     computed: {
         selectedTab() {
             return this.$store.state.navigator.selectedTab;
-        },
-    },
+        }
+    }
 };
 </script>
 
 <template>
     <div
-        class="classic-navigator-sub-menu-tabs d-flex flex-row"
+        class="lstr-classic-navigator-sub-menu-tabs d-flex flex-row"
         v-if="$store.state.navigator.topLevelContext.code !== 'official_view'"
         :class="{'menuEnabled': selectedTab}"
     >
         <div
-            class="classic-navigator-sub-menu-tab w-100 d-flex flex-row hasMenu"
+            class="lstr-classic-navigator-sub-menu-tab w-100 d-flex flex-row hasMenu"
             :class="{'active': selectedTab == 'search'}"
             @click="selectTab('search')"
         >
@@ -58,7 +58,7 @@ export default {
             {{$filters.localizeText('navigator.tab.search')}}
         </div>
         <div
-            class="classic-navigator-sub-menu-tab w-100 d-flex flex-row hasMenu"
+            class="lstr-classic-navigator-sub-menu-tab w-100 d-flex flex-row hasMenu"
             :class="{'active': selectedTab == 'myworld_view'}"
             @click="selectTab('myworld_view')"
         >
@@ -68,7 +68,7 @@ export default {
     </div>
     <Border
         skin="2"
-        class="classic-navigator-sub-menu classic-navigator-sub-padding"
+        class="lstr-classic-navigator-sub-menu lstr-classic-navigator-sub-padding"
         v-if="$store.state.navigator.topLevelContext.code !== 'official_view' && selectedTab"
     >
         <div v-if="selectedTab == 'search'">
@@ -81,13 +81,13 @@ export default {
     </Border>
     <Border
         skin="2"
-        class="classic-navigator-sub"
+        class="lstr-classic-navigator-sub"
         v-if="!$store.state.app.hotelview && !selectedTab"
         @click="hotelview()"
-        :class="{'classic-navigator-sub-padding': $store.state.navigator.topLevelContext.code == 'hotel_view'}"
+        :class="{'lstr-classic-navigator-sub-padding': $store.state.navigator.topLevelContext.code == 'hotel_view'}"
     >
-        <div class="classic-navigator-sub-text d-flex flex-row">
-            <div class="classic-navigator-arrow-left wide" />
+        <div class="lstr-classic-navigator-sub-text d-flex flex-row">
+            <div class="lstr-classic-navigator-arrow-left wide" />
             {{$filters.localizeText('toolbar.icon.label.exitroom.hotelview')}}
         </div>
     </Border>

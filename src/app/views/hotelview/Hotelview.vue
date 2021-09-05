@@ -11,7 +11,7 @@ export default {
             drape: null,
             left: null,
             rightRepeat: null,
-            right: null,
+            right: null
         };
     },
     mounted() {
@@ -24,12 +24,12 @@ export default {
         this.left = config.interpolate(images["left"]);
         this.rightRepeat = config.interpolate(images["right.repeat"]);
         this.right = config.interpolate(images["right"]);
-    },
+    }
 };
 </script>
 
 <template>
-    <div class="classic-hotelview" :style="{'background-color': backgroundColour}">
+    <div class="lstr-classic-hotelview" :style="{'background-color': backgroundColour}">
         <div
             v-if="background"
             class="background position-absolute"

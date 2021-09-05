@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-    props: ["chat"],
+    props: ["chat", "fixed"],
     mounted() {
         const element = this.$refs["bubble"];
 
@@ -19,7 +19,6 @@ export default {
         if (!left && !top) {
             left = this.chat.location.x - width / 2;
             top = element.parentElement.offsetHeight - height;
-
             this.chat.left = left;
             this.chat.top = top;
         }
@@ -29,7 +28,7 @@ export default {
 
             this.chat.visible = true;
         }
-    },
+    }
 };
 </script>
 

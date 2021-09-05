@@ -1,5 +1,5 @@
-import { Nitro, RoomSessionChatEvent, RoomSessionEvent } from "@nitrots/nitro-renderer/src";
-import store from "../../../../utils/store";
+import { Nitro, RoomEngineDimmerStateEvent, RoomEngineEvent, RoomId, RoomSessionChatEvent, RoomSessionEvent, RoomZoomEvent } from "@nitrots/nitro-renderer/src";
+import { RoomWidgetRoomEngineUpdateEvent } from "../events";
 import { RoomWidgetHandlerManager } from "../handlers";
 
 export class RoomWidgetListener
@@ -10,6 +10,7 @@ export class RoomWidgetListener
     constructor()
     {
         RoomWidgetListener._instance = this;
+        this.load();
     }
 
     public static getInstance(): RoomWidgetListener
@@ -21,22 +22,48 @@ export class RoomWidgetListener
 
     public load(): void
     {
-        this._widgetHandler = Object.assign(store.state.room.widgetHandler);
-
-        Nitro.instance.roomSessionManager.events.addEventListener(RoomSessionChatEvent.CHAT_EVENT, this.onRoomSessionEvent.bind(this))
-    }
-
-    public reset(): void
-    {
-        console.log('reset')
-        Nitro.instance.roomSessionManager.events.removeEventListener(RoomSessionChatEvent.CHAT_EVENT, this.onRoomSessionEvent.bind(this))
+        Nitro.instance.roomSessionManager.events.addEventListener(RoomSessionChatEvent.CHAT_EVENT, this.onRoomSessionEvent.bind(this));
+        Nitro.instance.roomEngine.events.addEventListener(RoomZoomEvent.ROOM_ZOOM, this.onRoomEngineEvent.bind(this));
     }
 
     public onRoomSessionEvent(event: RoomSessionEvent): void
     {
-        console.log(this)
         if (!this._widgetHandler) return;
 
         this._widgetHandler.processEvent(event);
+    }
+
+    public onRoomEngineEvent(event: RoomEngineEvent)
+    {
+        if (!this._widgetHandler.eventDispatcher || RoomId.isRoomPreviewerId(event.roomId)) return;
+
+        switch (event.type)
+        {
+            case RoomEngineEvent.NORMAL_MODE:
+                this._widgetHandler.eventDispatcher.dispatchEvent(new RoomWidgetRoomEngineUpdateEvent(RoomWidgetRoomEngineUpdateEvent.NORMAL_MODE, event.roomId));
+                return;
+            case RoomEngineEvent.GAME_MODE:
+                this._widgetHandler.eventDispatcher.dispatchEvent(new RoomWidgetRoomEngineUpdateEvent(RoomWidgetRoomEngineUpdateEvent.GAME_MODE, event.roomId));
+                return;
+            case RoomZoomEvent.ROOM_ZOOM: {
+                const zoomEvent = (event as RoomZoomEvent);
+
+                let zoomLevel = ((zoomEvent.level < 1) ? 0.5 : (1 << (Math.floor(zoomEvent.level) - 1)));
+
+                if (zoomEvent.forceFlip || zoomEvent.asDelta) zoomLevel = zoomEvent.level;
+
+                Nitro.instance.roomEngine.setRoomInstanceRenderingCanvasScale(event.roomId, 1, zoomLevel, null, null, false, zoomEvent.asDelta);
+
+                return;
+            }
+            case RoomEngineDimmerStateEvent.ROOM_COLOR: {
+                return;
+            }
+        }
+    }
+
+    public setHandler(handler: RoomWidgetHandlerManager)
+    {
+        this._widgetHandler = handler;
     }
 }
